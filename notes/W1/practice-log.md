@@ -9,9 +9,9 @@
 - 收获：wu
 
 ## Day 2（周二 11.17）git 三板斧
-- 做了：
-- 卡点：
-- 收获：
+- 做了：学习了add，commit，oneline，diff，checkout
+- 卡点：不了解他们的作用，
+- 收获：这些命令只是记录操作的一些指令
 
 ## Day 3（周三 11.18）接上 GitHub + log/diff
 - 做了：
