@@ -1,0 +1,22 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# === IDE ===
+.idea/
+.vscode/
+
+# === 模型/数据大文件（后期训练产物不进 git）===
+*.pth
+*.pt
+*.ckpt
+*.gguf
+data/
+
+# === 系统杂项 ===
+Thumbs.db
+.DS_Store
