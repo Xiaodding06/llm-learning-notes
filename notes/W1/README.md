@@ -22,7 +22,7 @@
 - [ ] 回来在本文件勾掉这一行，今晚第一次 commit（见 Day 2 流程，提前跑通一遍也行）
 
 ### Day 2（周二 11.17）：git 三板斧 add / commit / status · ~1h
-- [ ] 打开 Git Bash（开始菜单搜 "Git Bash"），`cd /d/学习资料/llm-learning-notes`
+- [ ] 打开 Git Bash（开始菜单搜 "Git Bash"），`cd /d/llm-learning-notes`
 - [ ] 依次执行并观察输出：`git status` → `git log --oneline` → 改动 practice-log.md 里今天的记录 → `git status`（看文件变红）→ `git add` → `git status`（变绿）→ `git commit`
 - [ ] 完成 git-cheatsheet.md 底部的**练习 1-4**，把答案/截图记进 practice-log.md
 - [ ] 理解核心：**工作区 → 暂存区 → 本地仓库** 三层模型（cheatsheet 顶部有图解说）
@@ -48,14 +48,26 @@
 - [ ] **可选**：管理员 PowerShell 执行 `wsl --install` 装 Ubuntu（装不装不影响验收，W2 要 ssh 服务器，到时候必须练）。WSL 装好后 `wsl` 进入，把练习 1-6 原样再跑一遍
 - [ ] 不装 WSL 就把时间省下来，多做几道 grep 管道组合题
 
-### Day 6（周六 11.21，半天）：本地环境整理 · ~3h
-- [ ] 读 environment-notes.md（布丁已盘点好你机器的现状），确认"系统 Python 当裸机工具、项目一律 venv"的约定
-- [ ] 给 `D:\学习资料\pythonProject` 补一份 `requirements.txt`：
+### Day 6（周六 11.21，半天）：本地环境整理 · ~1.5h
+> 修订（11.19）：原计划拿旧课程项目 pythonProject 练手，但它与大模型求职主线无关。
+> 改为**从零新建** `D:\llm-app-lab`，作为 W3 起 FastAPI / RAG / Agent 代码的落点。
+
+- [ ] 读 environment-notes.md，确认"系统 Python 当裸机工具、项目一律 venv"的约定
+- [ ] 新建独立项目 + 独立 venv（**不要用 pythonProject 的 venv**）：
   ```bash
-  & "D:\学习资料\pythonProject\.venv\Scripts\python.exe" -m pip freeze > requirements.txt
+  mkdir -p /d/llm-app-lab
+  "C:/Users/小丁/AppData/Local/Programs/Python/Python39/python.exe" -m venv /d/llm-app-lab/.venv
   ```
-- [ ] **进阶（强烈建议）**：把 pythonProject 也变成第二个 repo 推上 GitHub——你那几个 MNIST 实验脚本就是你最早的"可讲素材"
-- [ ] 测试环境自检：`.venv` 里 `python -c "import torch; print(torch.__version__)"` 走一遍
+- [ ] 装两个 LLM 应用真正会用到的包，再生成 requirements.txt：
+  ```bash
+  /d/llm-app-lab/.venv/Scripts/python.exe -m pip install requests python-dotenv -i https://pypi.tuna.tsinghua.edu.cn/simple
+  /d/llm-app-lab/.venv/Scripts/python.exe -m pip freeze > /d/llm-app-lab/requirements.txt
+  cat /d/llm-app-lab/requirements.txt | head -20
+  ```
+- [ ] 用 `>` / `>>` 写 .gitignore：`.venv/`、`.idea/`、`__pycache__/`、`.env`、`*.pth`
+- [ ] 写一份 5 行 README：这个项目做什么、怎么还原环境（`pip install -r requirements.txt`）
+- [ ] **可选**：把它变成第二个 repo 推上 GitHub（W3 的 FastAPI 代码就往这里提交）
+- [ ] 说清楚：`D:\学习资料\pythonProject` 是课程作业，与求职主线无关，不动它
 
 ### Day 7（周日 11.22，30min）：复盘 + 收尾
 - [ ] 填完 practice-log.md 本周全部记录

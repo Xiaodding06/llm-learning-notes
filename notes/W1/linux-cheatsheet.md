@@ -1,7 +1,7 @@
 # Linux 命令速查表（W1）
 
 > 练习环境：**Git Bash**（你机器上现成的精简 Linux 环境，开始菜单搜 "Git Bash"）。
-> 路径写法：Git Bash 里 D 盘写作 `/d/`，如 `cd /d/学习资料/llm-learning-notes`。
+> 路径写法：Git Bash 里 D 盘写作 `/d/`，如 `cd /d/llm-learning-notes`（仓库已于 11.19 从 `D:\学习资料\` 移到 `D:\` 根目录）。
 > 权限相关（chmod/chown）在 Windows 上语义不完整，理解概念即可，W2 连服务器后再实练。
 
 ## 1. 导航与查看
